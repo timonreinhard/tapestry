@@ -1,0 +1,59 @@
+.grow-enter-active {
+  animation: grow-in .5s;
+}
+
+.grow-leave-active {
+  animation: grow-out .5s;
+}
+
+@keyframes grow-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes grow-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.shrink-enter-active {
+  animation: shrink-in .5s;
+}
+
+.shrink-leave-active {
+  animation: shrink-out .5s;
+}
+
+@keyframes shrink-in {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shrink-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
