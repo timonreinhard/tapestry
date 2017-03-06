@@ -1,42 +1,36 @@
 <template>
-  <div class="dashboard-view">
-    <grid-panel :grid-size="gridSize" :rows="row" :cols="cols">
-      <grid-item v-for="widget in widgets"
-        :row="widget.row" :col="widget.col"
-        :row-span="widget.rowSpan" :col-span="widget.colSpan"
-        :grid-size="gridSize" readonly="readonly">
-        <component :is="widget.component" :widget="widget"></component>
-      </grid-item>
-    </grid-panel>
+  <div class="__dashboard-view">
+    <ul>
+      <li class="item" v-for="item in items" :key="item.name">
+        <contact-item v-if="item.type === 'Contact'" :item="item"></contact-item>
+        <number-item v-else-if="item.type === 'Number'" :item="item"></number-item>
+        <pre v-else-if="debug">{{ item }}</pre>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import ContactItem from 'src/components/items/contact-item'
+import NumberItem from 'src/components/items/number-item'
 
-import GridPanel from './grid/grid-panel'
-import GridItem from './grid/grid-item'
-import TextWidget from './widgets/text-widget'
-import WindowWidget from './widgets/window-widget'
+const debug = process.env.NODE_ENV !== 'production'
 
 export default {
   components: {
-    GridPanel,
-    GridItem,
-    TextWidget,
-    WindowWidget
+    ContactItem,
+    NumberItem
   },
   data () {
     return {
-      rows: 12,
-      cols: 16,
-      gridSize: 50
+      debug
     }
   },
   computed: {
-    ...mapGetters({
-      widgets: 'getWidgets'
-    })
+    ...mapGetters([
+      'items'
+    ])
   },
   methods: {
     ...mapActions([
@@ -46,8 +40,24 @@ export default {
 }
 </script>
 
-<style scoped>
-.dashboard-view {
-  background: transparent;
+<style lang="scss" scoped>
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li:empty {
+  display: none;
+}
+
+.item {
+  margin: 5px;
+  padding: 0;
+  flex: 1 0 auto;
 }
 </style>

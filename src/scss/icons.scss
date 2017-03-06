@@ -1,0 +1,5 @@
+.icon {
+  &[data-category='window'] {
+    background-image: url(~assets/icons/window.svg);
+  }
+}

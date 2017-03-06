@@ -33,7 +33,7 @@ npm install
 npm run dev
 
 # configure the API endpoint (defaults to localhost:8080)
-npm config set tapestry:target <ip-address>:<port>
+npm config set tapestry:target http://<ip-address>:<port>
 
 # serve with hot reload at localhost:3000
 npm run dev

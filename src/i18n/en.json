@@ -1,0 +1,7 @@
+{
+  "item_states": {
+    "open": "open",
+    "closed": "closed",
+    "unknown": "unknown"
+  }
+}
