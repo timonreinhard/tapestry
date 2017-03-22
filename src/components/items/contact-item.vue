@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .__contact-item {
-  background: #309c9c;
+  background: rgb(69, 162, 112);
   color: white;
   border-radius: 4px;
   padding: 1rem;
@@ -36,7 +36,7 @@ export default {
   transition: background-color 0.25s;
 
   &[data-state="open"] {
-    background-color: #da466e;
+    background-color: rgb(212, 12, 69);
   }
 
   .icon {

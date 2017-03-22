@@ -1,6 +1,6 @@
 <template>
   <div class="__number-item">
-    <div class="icon"><img src="~assets/icons/gear.svg" alt=""></div>
+    <div class="icon"></div>
     <div class="text">
       <div v-if="item.label" class="label">{{ item.label }}</div>
       <div class="state">{{ tweenedState | sprintf(pattern) }}</div>
@@ -59,7 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 .__number-item {
-  background: #1191be;
+  background: rgb(193, 16, 103);
   color: white;
   border-radius: 4px;
   padding: 1rem;
