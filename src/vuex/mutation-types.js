@@ -5,3 +5,5 @@ export const ESH_ITEM_STATE = 'ESH_ITEM_STATE'
 export const ESH_ITEM_UPDATE = 'ESH_ITEM_UPDATE'
 export const ESH_ITEM_ADD = 'ESH_ITEM_ADD'
 export const ESH_ITEM_REMOVE = 'ESH_ITEM_REMOVE'
+
+export const SET_ITEM_ORDER = 'SET_ITEM_ORDER'

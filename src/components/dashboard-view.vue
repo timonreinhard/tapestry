@@ -1,6 +1,6 @@
 <template>
   <div class="__dashboard-view">
-    <ul>
+    <draggable v-model="items" element="ul">
       <li class="item" v-for="item in items" :key="item.name">
         <contact-item v-if="item.type === 'Contact'" :item="item"></contact-item>
         <number-item v-else-if="item.type === 'Number'" :item="item"></number-item>
@@ -8,12 +8,13 @@
         <switch-item v-else-if="item.type === 'Switch'" :item="item"></switch-item>
         <pre v-else-if="debug">{{ item }}</pre>
       </li>
-    </ul>
+    </draggable>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import Draggable from 'vuedraggable'
 import StringItem from 'src/components/items/string-item'
 import NumberItem from 'src/components/items/number-item'
 import SwitchItem from 'src/components/items/switch-item'
@@ -23,6 +24,7 @@ const debug = process.env.NODE_ENV !== 'production'
 
 export default {
   components: {
+    Draggable,
     StringItem,
     NumberItem,
     SwitchItem,
@@ -34,13 +36,22 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'items'
-    ])
+    ...mapGetters({
+      itemsInOrder: 'itemsInOrder'
+    }),
+    items: {
+      get () {
+        return this.itemsInOrder
+      },
+      set (val) {
+        const order = val.reduce((result, item) => result.concat([ item.name ]), [])
+        this.reorderItems(order)
+      }
+    }
   },
   methods: {
     ...mapActions([
-      'addWidget'
+      'reorderItems'
     ])
   }
 }
