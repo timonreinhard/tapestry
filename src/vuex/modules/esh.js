@@ -1,4 +1,4 @@
-import esh from 'src/api/esh'
+import esh from '../../api/esh'
 import {
   ESH_ITEMS_RECEIVE,
   ESH_ITEM_STATE,
@@ -50,7 +50,7 @@ const actions = {
   }
 }
 
-const mutations = {
+export const mutations = {
   [ESH_ITEMS_RECEIVE] (state, items) {
     state.items = items
   },
