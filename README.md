@@ -42,23 +42,20 @@ Start by forking this repo and cloning the fork.
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:3000
-npm run dev
-
 # configure the API endpoint (defaults to localhost:8080)
 npm config set tapestry:target http://<ip-address>:<port>
 
 # serve with hot reload at localhost:3000
-npm run dev
+npm start
+
+# run tests continously
+npm run test:watch
+
+# run tests
+npm test
 
 # build for production with minification
 npm run build
-
-# run unit tests
-npm run unit
-
-# run all tests
-npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
