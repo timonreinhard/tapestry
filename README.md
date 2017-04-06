@@ -1,6 +1,6 @@
 # Tapestry
 
-A _prototypical_ dashboard for [openHAB](http://www.openhab.org) built with [Vue.js](https://vuejs.org) + [Vuex](https://vuex.vuejs.org/).
+A minimal dashboard for [openHAB](http://www.openhab.org) built with [Vue.js](https://vuejs.org) + [Vuex](https://vuex.vuejs.org/).
 
 ### Supported Item Types
 
