@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import 'pepjs'
 
 import Vue from 'vue'
