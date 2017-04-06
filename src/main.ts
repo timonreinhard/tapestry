@@ -1,15 +1,16 @@
-import 'pepjs'
+import * as Vue from 'vue'
 
-import Vue from 'vue'
-import App from 'src/app'
-import store from 'src/vuex/store'
-import './i18n'
+import App from './app.vue'
+import store from './vuex/store'
+// import './i18n'
 
-import SprintfFilter from 'src/filters/sprintf-filter'
-import LowercaseFilter from 'src/filters/lowercase-filter'
+// import SprintfFilter from './filters/sprintf-filter'
+// import LowercaseFilter from './filters/lowercase-filter'
+//
+// Vue.filter('sprintf', SprintfFilter)
+// Vue.filter('lowercase', LowercaseFilter)
 
-Vue.filter('sprintf', SprintfFilter)
-Vue.filter('lowercase', LowercaseFilter)
+Vue.config.devtools = true
 
 // eslint-disable-next-line no-new
 new Vue({

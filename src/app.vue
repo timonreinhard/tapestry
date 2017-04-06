@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import DashboardView from './components/dashboard-view'
 import { mapActions } from 'vuex'
 

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+import * as VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
@@ -10,7 +10,7 @@ const locales = ['en']
 // This actually requires all files during build-time
 // See: https://webpack.github.io/docs/context.html#dynamic-require
 locales.forEach(locale => {
-  Vue.locale(locale, require('./i18n/' + locale + '.json'))
+  // Vue.locale(locale, require('./i18n/' + locale + '.json'))
 })
 
 Vue.config.lang = 'en'
