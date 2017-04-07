@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '6'
+deploy:
+  provider: releases
+  api_key:
+    secure: P9/k31T+6hW2I3zFhTPjTJ500sJSnKxXqijvre0mLj8TWRxF+wTSE098JzN3UAUvhhNQJTGgINuaFGzu8j/29EycY8JgXf9lZ4FtuxbXgDLSF+EU75pd1noTri7v1kS72SHxLUTe1LGKvsNvlPjKXq5wGZbhhNTlkMmzF58LMxLvpjLJLDjHfER5ljeoR4+Hh/WsZz0QHTq0YtqhQJIDeQT0X4ghv0aeCKVzMNmDx/r+CqbvAoJsakigpFTJTXHl6s07mPPVjjYsIoCCVdzLTChVDPsr2pm3501HamalQNpU1Vt3NYDm43lcraIgPJLrjSCY7F2UxS5AZCdz9acAKSV6EFR50KhV5AdEjxFW2WXwrNSNDcE6GUo4PtxOZJA8OY/Fsy89TQ4AYsKNAUMsCiIx92Nep1A5EIENcopT5EYn81gh90GDahpKZCX15Gxw3iqF2YOleFBNz8IFlErpzIJQ4ScKGXrOyDWwteChJlhBef6tyLsYxMjKl0EumM9RRsDXu88wxfvYuoC9Wa/HKdmRuyHj6I2dW1yQo2uCWBtUGYv9PMsk/48GpeYOsOedhQOCGBfSq16aTAUPCumQg8LB639smiex2hJdeCDKi8olJGtPaTfk6bbd+8wbQok2Ds7oeYWKVoZQWzYK38EZJlXnnzpgQbXIxyDTVH5ZYqM=
+  file_glob: true
+  file: dist/*
+  skip_cleanup: true
+  on:
+    repo: timonreinhard/tapestry
+    tags: true
