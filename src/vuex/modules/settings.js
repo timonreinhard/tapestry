@@ -3,11 +3,13 @@ import {
 } from '../mutation-types'
 
 const state = {
-  order: []
+  order: {
+    items: []
+  }
 }
 
 const getters = {
-  order: state => state.order
+  order: state => state.order.items
 }
 
 const actions = {
@@ -18,7 +20,7 @@ const actions = {
 
 export const mutations = {
   [SET_ITEM_ORDER] (state, order) {
-    state.order = order
+    state.order.items = order
   }
 }
 
