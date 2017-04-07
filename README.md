@@ -2,6 +2,8 @@
 
 A minimal dashboard for [openHAB](http://www.openhab.org) built with [Vue.js](https://vuejs.org) + [Vuex](https://vuex.vuejs.org/).
 
+[![Build Status](https://travis-ci.org/timonreinhard/tapestry.svg?branch=master)](https://travis-ci.org/timonreinhard/tapestry)
+
 ### Supported Item Types
 
 - [ ] Color
