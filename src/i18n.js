@@ -3,8 +3,7 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
-// When adding further locales, make sure to import
-// the corresponding moment.js file as well (see above)
+// Supported application locales
 const locales = ['en']
 
 // This actually requires all files during build-time
@@ -13,8 +12,21 @@ locales.forEach(locale => {
   Vue.locale(locale, require('./i18n/' + locale + '.json'))
 })
 
-Vue.config.lang = 'en'
 Vue.config.fallbackLang = 'en'
+Vue.config.lang = []
+  .concat(
+    navigator.languages,
+    navigator.language,
+    navigator.userLanguage,
+    navigator.browserLanguage,
+    navigator.systemLanguage
+  )
+  .filter(el => typeof el === 'string')
+  .reduceRight((prev, current) =>
+    locales.includes(current.substr(0, 2))
+    ? current
+    : prev
+  , Vue.config.fallbackLang)
 
 // Apply to DOM
 document.documentElement.setAttribute('lang', Vue.config.lang.substr(0, 2))
