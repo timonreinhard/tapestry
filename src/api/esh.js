@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: '/rest'
+  baseURL: 'http://192.168.2.10:8080/rest'
 })
 
 client.interceptors.response.use(
